@@ -5,18 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="NM Agency is a Paris-based performance influencer and growth marketing agency. We scale travel and lifestyle brands across France, Italy, Spain, the UK and the US.">
 <meta name="theme-color" content="#2F55DC">
-<link rel="canonical" href="https://www.agency-nm.com/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F55DC'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3ENM%3C/text%3E%3C/svg%3E">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="NM Agency">
-<meta property="og:title" content="NM Agency — Your Growth Marketing Partner">
-<meta property="og:description" content="NM Agency is a Paris-based performance influencer and growth marketing agency. We scale travel and lifestyle brands across France, Italy, Spain, the UK and the US.">
-<meta property="og:url" content="https://www.agency-nm.com/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="NM Agency — Your Growth Marketing Partner">
-<meta name="twitter:description" content="NM Agency is a Paris-based performance influencer and growth marketing agency. We scale travel and lifestyle brands across France, Italy, Spain, the UK and the US.">
-
 <title>NM Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -275,8 +263,8 @@ p{margin:0}
   transition:border-color .2s ease;
 }
 .card:hover{border-color:var(--line-strong)}
-.g3 > .cta-card{grid-column:span 2}
-@media (max-width:640px){.g3 > .cta-card{grid-column:auto}}
+.g3 > .cta-card{grid-column:span 3}
+@media (max-width:920px){.g3 > .cta-card{grid-column:auto}}
 .card .viz{aspect-ratio:16/9}
 .card h3{font-size:20px;font-stretch:108%}
 .card p{font-size:15px;color:var(--ink-2);line-height:1.58}
@@ -550,7 +538,7 @@ p{margin:0}
 /* ============ FOOTER ============ */
 .foot{border-top:1px solid var(--line);background:var(--surface)}
 .foot .top{display:grid;gap:34px;padding-block:clamp(40px,5vw,66px)}
-@media (min-width:840px){.foot .top{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:40px}}
+@media (min-width:840px){.foot .top{grid-template-columns:minmax(0,1.6fr) repeat(2,minmax(0,1fr));gap:48px}}
 .foot h4{font-family:var(--f-mono);font-stretch:100%;font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
 .foot ul a{font-size:14.5px;color:var(--ink-2);text-decoration:none}
@@ -632,7 +620,6 @@ p{margin:0}
 @media (prefers-reduced-motion:reduce){[data-route]{animation:none}}
 </style>
 <style>
-  /* base reset — the hosted build supplies what the artifact host used to add */
   :root{color-scheme:light dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
   html{-webkit-text-size-adjust:100%}
   body{margin:0}
@@ -655,7 +642,6 @@ p{margin:0}
       <a href="#/services" data-nav>Services</a>
       <a href="#/work" data-nav>Case studies</a>
       <a href="#/about" data-nav>About</a>
-      <a href="https://www.agency-nm.com/blog" target="_blank" rel="noopener">Resources</a>
     </nav>
     <div class="head-cta">
       <a class="btn btn-primary" href="#/contact" data-nav>Book a call</a>
@@ -704,8 +690,8 @@ p{margin:0}
     <div class="wrap">
       <div class="sechead">
         <p class="eyebrow">Services</p>
-        <h2>Four channels, one growth engine</h2>
-        <p class="lead">We sit at the intersection of brand identity and digital strategy, offering influencer, email, digital ads and search engine optimisation strategy.</p>
+        <h2>Three channels, one growth engine</h2>
+        <p class="lead">We sit at the intersection of brand identity and digital strategy, offering influencer, digital ads and search engine optimisation strategy.</p>
       </div>
       <div class="grid g3" id="svc-cards"></div>
     </div>
@@ -873,7 +859,7 @@ p{margin:0}
     <div class="hero-inner">
       <span class="pill"><span class="dot"></span> Services</span>
       <h1 style="font-size:clamp(32px,5.2vw,58px);max-width:20ch">We sit at the intersection of brand identity and digital strategy</h1>
-      <p class="lead">Offering influencer, email, digital ads and search engine optimisation strategy — delivered across France, Italy, Spain, Germany, the UK and the US.</p>
+      <p class="lead">Offering influencer, digital ads and search engine optimisation strategy — delivered across France, Italy, Spain, Germany, the UK and the US.</p>
       <div class="hero-actions"><a class="btn btn-primary" href="#/contact" data-nav>Book a free call <span class="arw">→</span></a></div>
     </div>
   </div>
@@ -1043,7 +1029,7 @@ p{margin:0}
           <label for="f-service">What you're after</label>
           <select id="f-service" name="service">
             <option>Influencer marketing</option>
-            <option>Email marketing</option><option>Meta &amp; Google Ads</option>
+            <option>Meta &amp; Google Ads</option>
             <option>European market expansion</option><option>Talent representation</option>
             <option>Not sure yet</option>
           </select>
@@ -1101,13 +1087,6 @@ p{margin:0}
         <li><a href="#/services" data-nav>Services</a></li>
         <li><a href="#/work" data-nav>Case studies</a></li>
         <li><a href="#/about" data-nav>About</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Resources</h4>
-      <ul>
-        <li><a href="https://www.agency-nm.com/blog" target="_blank" rel="noopener">Blog</a></li>
-        <li><a href="#/home" data-nav>FAQ</a></li>
         <li><a href="#/contact" data-nav>Contact</a></li>
       </ul>
     </div>
@@ -1191,13 +1170,10 @@ p{margin:0}
     {t:"Influencer Marketing",ic:"01",k:"influencer",
      d:"Gifting and seeding campaigns, creator research and sourcing, negotiation and contract creation, conversion optimization strategies, and performance tracking.",
      tags:["Creator research","Gifting &amp; seeding","Contracts"]},
-    {t:"Email Marketing",ic:"02",k:"email",
-     d:"Still the digital channel with the highest ROI. Lead opt-ins, newsletters, copywriting, metric optimization, automations and A/B testing.",
-     tags:["Automations","A/B testing"]},
-    {t:"Meta &amp; Google Ads",ic:"03",k:"ads",
+    {t:"Meta &amp; Google Ads",ic:"02",k:"ads",
      d:"Social media ad strategy, creative creation, and detailed performance reporting across platforms.",
      tags:["Ad copy","Keyword mapping","Conversion tracking"]},
-    {t:"European Market Expansion",ic:"04",k:"markets",
+    {t:"European Market Expansion",ic:"03",k:"markets",
      d:"Localized tone adaptation, regional partnerships, content development, and budget optimization for France, Italy, Germany, and Spain.",
      tags:["FR","IT","DE","ES"]},
     {t:"Not sure which channel fits?",ic:"→",cta:true,k:"next",
@@ -1339,22 +1315,18 @@ p{margin:0}
      p:"Gifting and seeding campaigns, creator research and sourcing, negotiation and contract creation, conversion optimization strategies, and performance tracking.",
      b:["Creator research","Gifting &amp; seeding","Contract negotiation","Conversion optimization","Performance tracking"],
      m:"FR · IT · ES · DE · UK · US"},
-    {n:"/ 02",h:"Email Marketing",k:"email",
-     p:"Email marketing is still the digital channel with the highest ROI. We cover lead opt-in suggestions, newsletters, copywriting, metric optimization, automations, creative development, and A/B testing.",
-     b:["Lead opt-ins","Newsletters &amp; copywriting","Email automations","Metric optimization","A/B testing"],
-     m:"Retention · Lifecycle"},
-    {n:"/ 03",h:"Meta &amp; Google Ads",k:"ads",
+    {n:"/ 02",h:"Meta &amp; Google Ads",k:"ads",
      p:"Social media ad strategy, creative creation, and detailed performance reporting across platforms.",
      b:["Ad copywriting","Keyword mapping","Campaign optimization","Conversion tracking &amp; event setup"],
      m:"Meta · Google · TikTok"},
-    {n:"/ 04",h:"European Market Expansion",k:"markets",
+    {n:"/ 03",h:"European Market Expansion",k:"markets",
      p:"Localized tone adaptation, regional partnerships, content development, and budget optimization for France, Italy, Germany, and Spain.",
      b:["Market entry strategy","Localized content","Local influencers","Conversion optimization"],
      m:"FR · IT · ES · DE"}
   ];
 
   var PLAN = ["Creator sourcing, briefing and negotiation","Campaign management end to end",
-    "Meta &amp; Google Ads management","Email marketing and automations",
+    "Meta &amp; Google Ads management","Localized creative production",
     "Localized content for each market","Monthly performance reporting"];
 
   var TEAM = [

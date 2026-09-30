@@ -338,6 +338,7 @@ p{margin:0}
   position:absolute;left:16px;bottom:16px;
   box-shadow:0 12px 24px -16px rgba(13,16,20,.6);
 }
+.svc-ico.inline{position:static;left:auto;bottom:auto;margin:4px 4px 2px}
 .ico{
   width:21px;height:21px;display:block;flex:0 0 auto;
   fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;
@@ -1449,7 +1450,9 @@ p{margin:0}
       ? '<div class="taglist"><a class="textlink" href="#/contact" data-nav>Book a call →</a></div>'
       : '<div class="taglist">'+s.tags.map(function(t){return '<span class="tag">'+t+'</span>';}).join("")+'</div>';
     return '<article class="card'+(s.cta?" cta-card":"")+'"'+(s.cta?' style="background:var(--accent-2-soft);border-color:color-mix(in srgb,var(--accent-2) 30%,transparent)"':'')+'>'+
-      '<div class="viz'+(i%2?" warm":"")+'"><span class="svc-ico"'+(i%2?' style="background:var(--accent-3)"':'')+'>'+ico(s.k)+'</span></div>'+
+      (s.cta
+        ? '<span class="svc-ico inline" style="background:var(--accent-3)">'+ico(s.k)+'</span>'
+        : '<div class="viz'+(i%2?" warm":"")+'"><span class="svc-ico"'+(i%2?' style="background:var(--accent-3)"':'')+'>'+ico(s.k)+'</span></div>')+
       '<div class="body"><span class="idx">'+(s.cta?"/ Next":"/ "+s.ic)+'</span><h3>'+s.t+'</h3><p>'+s.d+'</p></div>'+
       foot+'</article>';
   }).join(""));

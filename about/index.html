@@ -3,8 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="NM Agency is a Paris-based performance influencer and growth marketing agency. We scale travel and lifestyle brands across France, Italy, Spain, the UK and the US.">
+<title>About — An independent marketing consultancy in Paris | NM Agency</title>
+<meta name="description" content="We are an independent strategy and marketing consultancy based in Paris, helping brands realise their online potential across Europe and the US.">
+<link rel="canonical" href="https://www.agency-nm.com/about">
 <meta name="theme-color" content="#2F55DC">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NM Agency">
+<meta property="og:title" content="About — An independent marketing consultancy in Paris | NM Agency">
+<meta property="og:description" content="We are an independent strategy and marketing consultancy based in Paris, helping brands realise their online potential across Europe and the US.">
+<meta property="og:url" content="https://www.agency-nm.com/about">
+<meta property="og:image" content="https://www.agency-nm.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NM Agency — Growth Marketing Agency, Paris">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — An independent marketing consultancy in Paris | NM Agency">
+<meta name="twitter:description" content="We are an independent strategy and marketing consultancy based in Paris, helping brands realise their online potential across Europe and the US.">
+<meta name="twitter:image" content="https://www.agency-nm.com/og.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "NM Agency", "legalName": "RSPR & Co.", "url": "https://www.agency-nm.com/", "description": "Paris-based performance influencer and growth marketing agency working with brands across France, Italy, Spain, Germany, the UK and the US.", "address": {"@type": "PostalAddress", "addressLocality": "Paris", "addressCountry": "FR"}, "email": "hello@agency-nm.com", "logo": "https://www.agency-nm.com/icon-512.png", "image": "https://www.agency-nm.com/og.png", "sameAs": ["https://www.instagram.com/nm.marketing.agency/", "https://www.linkedin.com/company/agencynm"]}</script>
 <title>NM Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -488,7 +509,7 @@ p{margin:0}
 /* ============ TEAM ============ */
 .team{display:grid;gap:14px}
 @media (min-width:760px){.team{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.member{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:16px;display:grid;gap:14px}
+.member{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:16px;display:grid;gap:14px;align-content:start}
 .member .photo{
   aspect-ratio:1/1;border-radius:16px;border:1px solid var(--line);overflow:hidden;
   background:linear-gradient(160deg,var(--accent-soft),var(--surface-2));
@@ -589,6 +610,52 @@ p{margin:0}
 .deets .v{font-size:16px;color:var(--ink)}
 .deets .v a{text-decoration:none;border-bottom:1px solid var(--line-strong)}
 .deets .v a:hover{border-bottom-color:var(--accent);color:var(--accent)}
+
+/* ============ BLOG ============ */
+.postlist{display:grid;gap:0;border-top:1px solid var(--line)}
+.postrow{
+  display:grid;grid-template-columns:150px 1fr auto;gap:clamp(16px,3vw,40px);align-items:start;
+  padding-block:clamp(22px,3vw,32px);border-bottom:1px solid var(--line);
+  text-decoration:none;color:inherit;transition:background .25s ease,padding .25s ease;
+}
+.postrow:hover{background:var(--surface)}
+.postrow .when{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:6px}
+.postrow h3{font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(20px,2.4vw,27px);letter-spacing:-0.02em;line-height:1.15;margin:0}
+.postrow p{margin:10px 0 0;color:var(--ink-2);font-size:15.5px;max-width:62ch}
+.postrow .tagp{display:inline-block;margin-top:12px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.postrow .arw{font-size:20px;color:var(--accent);padding-top:4px;transition:transform .25s ease}
+.postrow:hover .arw{transform:translateX(5px)}
+@media (max-width:760px){
+  .postrow{grid-template-columns:1fr;gap:6px}
+  .postrow .arw{display:none}
+}
+.post{max-width:none;margin-inline:auto;width:min(100%,720px)}
+.post .kicker{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.post h1{font-family:var(--f-display);font-stretch:114%;font-weight:700;font-size:clamp(30px,4.6vw,49px);letter-spacing:-0.033em;line-height:1.05;margin:18px 0 0}
+.post .dek{font-size:clamp(17px,2vw,20px);line-height:1.55;color:var(--ink-2);margin:20px 0 0;max-width:60ch}
+.post .byline{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.post .body{margin-top:clamp(28px,4vw,44px)}
+.post .body h2{font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(21px,2.6vw,29px);letter-spacing:-0.022em;line-height:1.18;margin:clamp(34px,4vw,48px) 0 0}
+.post .body h3{font-family:var(--f-body);font-weight:650;font-size:18px;letter-spacing:-0.008em;margin:30px 0 0}
+.post .body p{font-size:16.5px;line-height:1.72;color:var(--ink-2);margin:14px 0 0}
+.post .body strong{color:var(--ink);font-weight:620}
+.post .body ul.bullets,.post .body ol.bullets{margin:16px 0 0;padding-left:0;list-style:none;display:grid;gap:12px;counter-reset:bl}
+.post .body ul.bullets li,.post .body ol.bullets li{display:block;border-top:none;padding:0 0 0 26px;position:relative;font-size:16.5px;line-height:1.65;color:var(--ink-2)}
+.post .body ul.bullets li::before{content:"";position:absolute;left:4px;top:10px;transform:none;width:7px;height:7px;border-radius:50%;background:var(--accent-3)}
+.post .body ol.bullets{counter-reset:bl}
+.post .body ol.bullets li{padding:0 0 0 32px;counter-increment:bl}
+.post .body ol.bullets li::before{content:counter(bl);position:absolute;left:0;top:2px;transform:none;width:20px;height:20px;border-radius:50%;background:none;font-family:var(--f-mono);font-size:11px;color:var(--accent);display:flex;align-items:center;justify-content:center;border:1px solid var(--line-strong)}
+.post .body .pull{font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(19px,2.3vw,25px);letter-spacing:-0.02em;line-height:1.3;color:var(--ink);
+  margin:clamp(26px,3vw,36px) 0 0;padding-left:20px;border-left:3px solid var(--accent-3)}
+.post .body .note{font-size:14.5px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-s,12px);padding:16px 18px;margin-top:28px;line-height:1.6}
+.post .body .tablewrap{margin-top:22px;overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-s,12px)}
+.post .body table{border-collapse:collapse;width:100%;min-width:520px;font-size:14.5px}
+.post .body th,.post .body td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.post .body th{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--surface)}
+.post .body tbody tr:last-child td{border-bottom:none}
+.postback{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.postback:hover{color:var(--accent)}
+.postnext{margin-top:clamp(40px,5vw,64px);padding-top:28px;border-top:1px solid var(--line)}
 
 /* ============ FOOTER ============ */
 .foot{border-top:1px solid var(--line);background:var(--surface)}
@@ -805,7 +872,7 @@ p{margin:0}
     <div class="wrap">
       <div class="sechead">
         <p class="eyebrow">Clients</p>
-        <h2>What founders say</h2>
+        <h2>What our clients say about us</h2>
       </div>
       <div class="carousel-head">
         <p class="small">Two of the brands we work with</p>
@@ -948,6 +1015,39 @@ p{margin:0}
         <p class="eyebrow">Next step</p>
         <h2>Want results like these for your brand?</h2>
         <div class="row"><a class="btn btn-primary" href="/contact" data-nav>Book a free call <span class="arw">→</span></a></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= BLOG ================= -->
+<section data-route="blog" hidden>
+  <div id="blog-index">
+    <div class="wrap hero">
+      <div class="hero-inner">
+        <span class="pill"><span class="dot"></span> Journal</span>
+        <h1 style="font-size:clamp(32px,5.2vw,58px);max-width:20ch">Notes on creator-led growth</h1>
+        <p class="lead">What we're seeing across creator programmes, paid social and European market entry &mdash; written up as we learn it.</p>
+      </div>
+    </div>
+    <section class="sec line">
+      <div class="wrap"><div class="postlist" id="post-list"></div></div>
+    </section>
+  </div>
+
+  <div id="blog-post" hidden>
+    <div class="wrap" style="padding-block:clamp(40px,5vw,72px)">
+      <div class="post"><a class="postback" href="/blog" data-nav>&larr; All posts</a></div>
+      <div class="post" id="post-body" style="margin-top:22px"></div>
+    </div>
+  </div>
+
+  <section class="sec line">
+    <div class="wrap">
+      <div class="ctaband">
+        <p class="eyebrow">Next step</p>
+        <h2>Want this running for your brand?</h2>
+        <div class="row"><a class="btn btn-primary" href="/contact" data-nav>Book a free call <span class="arw">&rarr;</span></a></div>
       </div>
     </div>
   </section>
@@ -1107,6 +1207,7 @@ p{margin:0}
         <li><a href="/work" data-nav>Case studies</a></li>
         <li><a href="/about" data-nav>About</a></li>
         <li><a href="/contact" data-nav>Contact</a></li>
+        <li><a href="/blog" data-nav>Blog</a></li>
       </ul>
     </div>
     <div>
@@ -1220,7 +1321,6 @@ p{margin:0}
      title:"3M+ organic views and 1,000+ applications from a 50-creator programme",
      teaser:"A selective private undergraduate institution with campuses in Lisbon, Paris and Berlin.",
      metrics:[["3M+","Organic views"],["50+","Creators activated"],["+1,000","Qualified applications"]],
-     url:"https://www.agency-nm.com/case-studies/how-forward-college-used-influencer-marketing",
      blocks:[
        {h:"The client",p:["Forward College, a selective private undergraduate institution with campuses in Lisbon, Paris and Berlin."]},
        {h:"The challenge",p:["Marketing a premium, academically rigorous product that requires deep consideration rather than an impulse decision — to high-achieving prospective students aged 17–20."]},
@@ -1242,7 +1342,6 @@ p{margin:0}
      title:"A 750-strong creator network holding a €35 blended CPA in Italy",
      teaser:"A vitamins and supplements brand entering the competitive Italian market.",
      metrics:[["750+","Ambassadors in network"],["30+","Influencers / month"],["€35","Blended CPA"]],
-     url:"https://www.agency-nm.com/case-studies/cuure-growth",
      blocks:[
        {h:"The client",p:["Cuure, a vitamins and supplements company, launching and scaling in the Italian market."]},
        {h:"The challenge",p:["Accelerate customer acquisition and brand awareness in a competitive market while holding cost efficiency and balancing growth across several channels."]},
@@ -1285,7 +1384,6 @@ p{margin:0}
      title:"50,000 monthly downloads and #13 on the German App Store",
      teaser:"A fast-growing sustainable shopping app scaling in the German market.",
      metrics:[["50K+","Monthly downloads"],["#13","German App Store"],["TikTok","Lead channel"]],
-     url:"https://www.agency-nm.com/case-studies/faircado-growth",
      blocks:[
        {h:"The client",p:["Faircado, a fast-growing sustainable shopping app operating in the German market."]},
        {h:"The challenge",p:["Accelerate user acquisition and brand awareness in the highly competitive German market."]},
@@ -1304,7 +1402,6 @@ p{margin:0}
      title:"Ten creators a month across Europe and Latin America",
      teaser:"A global leader in eSIM connectivity strengthening its presence in new markets.",
      metrics:[["10+","Creators / month"],["3","Regions covered"],["Monthly","Campaign cadence"]],
-     url:"https://www.agency-nm.com/case-studies/ubigi-esim-influencermarketing",
      blocks:[
        {h:"The client",p:["Ubigi, a global leader in eSIM connectivity."]},
        {h:"The challenge",p:["Strengthen brand presence across European and Latin American markets, where awareness of eSIM as a category was still building."]},
@@ -1322,7 +1419,6 @@ p{margin:0}
      title:"Influencer proven as a scalable channel, then renewed with a bigger budget",
      teaser:"One of Paris's best-known nail-care brands, testing influencer as a growth channel.",
      metrics:[["Positive","Return on ad spend"],["Year 2","Budget increased"],["High-value","New customer mix"]],
-     url:"https://www.agency-nm.com/case-studies/manucuristparis",
      blocks:[
        {h:"The client",p:["Manucurist Paris, a French nail-care brand."]},
        {h:"The challenge",p:["Validate influencer marketing as a scalable growth channel — increasing brand visibility, attracting new high-value customers and boosting online sales while keeping ad spend efficient."]},
@@ -1335,6 +1431,33 @@ p{margin:0}
          "Expectations exceeded, securing a larger budget for the following year",
          "By mid-2025, a more optimised budget allocation continuing to generate sales",
          "New customers remained high value and repeat purchase rates stayed strong"]}
+     ]},
+    {id:"jetpac",client:"Jetpac",sector:"Influencer &amp; paid social",
+     title:"CPM cut from $45 to $25 on an always-on creator programme",
+     teaser:"An influencer programme running since October 2025, built so that paid reach gets cheaper the longer it runs.",
+     metrics:[["-44%","CPM reduction"],["$25","CPM, down from $45"],["Oct 2025","Running since"]],
+     blocks:[
+       {h:"The brief",p:["Run an always-on influencer marketing programme from October 2025, with cost of reach as the number the work is judged on."]},
+       {h:"The approach",list:[
+         "<b>Creator selection:</b> creators chosen on how efficiently their audience converts attention into reach, not on follower count.",
+         "<b>Creative and hooks:</b> specific creative formats and hooks built and tested per creator rather than one brief sent to everyone.",
+         "<b>Creator content into paid:</b> the content that earns attention organically is the content that runs as social ads, so spend goes behind proven material.",
+         "<b>Continuous iteration:</b> hooks and creator mix refreshed as costs move, so efficiency compounds instead of decaying."]},
+       {h:"The result",p:["CPM came down from $45 to $25 \u2014 a 44% reduction in the cost of reaching a thousand people, on a programme that is still running."]}
+     ]},
+    {id:"sova",client:"Sova",sector:"Italian market launch",
+     title:"Italian market launched from zero to 1.3 ROI inside the first year",
+     teaser:"A full market entry \u2014 positioning, site, CRM, content, ads and creators \u2014 turned profitable within a couple of months.",
+     metrics:[["1.3","ROI, Italian market"],["2024","Market launched"],["2 yrs","Partnership"]],
+     blocks:[
+       {h:"The brief",p:["Launch the brand into the Italian market in 2024 and make it a profitable channel, not just a present one."]},
+       {h:"The approach",list:[
+         "<b>Strategic positioning:</b> the proposition rebuilt for how Italian customers actually buy, rather than translated from the home market.",
+         "<b>Website optimisation:</b> the Italian experience reworked end to end for conversion.",
+         "<b>CRM and email:</b> lifecycle flows built to turn first purchases into repeat ones.",
+         "<b>UGC and creator content:</b> local creator content produced as the raw material for both organic and paid.",
+         "<b>Paid ads and influencer campaigns:</b> run together, with creator content feeding the ad account."]},
+       {h:"The result",p:["The Italian market was profitable within a couple of months of launch, and reached a 1.3 ROI after the first year. We ran the market for two years."]}
      ]}
   ];
 
@@ -1537,51 +1660,114 @@ p{margin:0}
   }
   document.addEventListener("click", function(e){
     var btn = e.target.closest ? e.target.closest("[data-case]") : null;
-    if(btn){ navigate("work"); openCase(btn.getAttribute("data-case")); }
+    if(btn){ navigate("work", ""); openCase(btn.getAttribute("data-case")); }
   });
 
+  var SITE_NAME = "NM Agency";
+  var TITLES = {"home": "NM Agency — Performance influencer & growth marketing, Paris", "services": "Services — Influencer, Meta & Google Ads, European expansion | NM Agency", "work": "Case studies — Some of our past work | NM Agency", "about": "About — An independent marketing consultancy in Paris | NM Agency", "contact": "Contact — Book a free strategy call | NM Agency", "blog": "Journal — Notes on creator-led growth | NM Agency"};
+  var DESCS = {"home": "Paris-based performance influencer and growth marketing agency. We scale travel, beauty and lifestyle brands across France, Italy, Spain, Germany, the UK and the US.", "services": "Influencer marketing, Meta and Google Ads, and European market expansion — delivered across France, Italy, Spain, Germany, the UK and the US.", "work": "Creator and paid programmes across education, beauty, connectivity and resale, with the numbers the client actually saw.", "about": "We are an independent strategy and marketing consultancy based in Paris, helping brands realise their online potential across Europe and the US.", "contact": "Tell us about your brand and your goals. Book a free call with NM Agency, Paris.", "blog": "What we're seeing across creator programmes, paid social and European market entry — written up as we learn it."};
+
+  var POSTS = [{"slug": "creator-led-growth-dtc-playbook-2026", "title": "Creator-Led Growth: The DTC Playbook for 2026", "date": "2026-04-24", "label": "April 2026", "tag": "Creator strategy", "dek": "The DTC brands winning in 2026 aren't running influencer campaigns. They're building creator-fed demand engines — systematic, repeatable, profitable.", "body": "\n<p>While competitors chase viral moments with random creators, winners are seeding networks, testing at scale, and running ads on proven content. It's infrastructure, not a campaign.</p>\n<p>Here's the exact system.</p>\n\n<h2>The 4-phase creator-led growth system</h2>\n\n<h3>Phase 1 &mdash; Build your seeding machine</h3>\n<p><strong>Month 1:</strong> Seed 10 creators (engagement rate, not follower count). Ship product. No asks. Watch who posts.</p>\n<p><strong>Month 2:</strong> Seed 20 more creators. Track post rate and initial performance.</p>\n<p><strong>Month 3:</strong> Seed 20 more. Different angles. Different audience segments.</p>\n<p><strong>By month 6:</strong> 100+ creators seeded. Your authentic content library is built.</p>\n<p>Target: a 30&ndash;50% post rate. You only scale the ones who actually create.</p>\n\n<h3>Phase 2 &mdash; Test the full funnel (months 2&ndash;4)</h3>\n<p>While seeding, test what converts, weekly:</p>\n<ul class=\"bullets\">\n  <li><strong>Hook type</strong> &mdash; does it stop the scroll? Problem-solving, lifestyle, demo?</li>\n  <li><strong>Storytelling angle</strong> &mdash; educational, aspirational, problem-first?</li>\n  <li><strong>CTA</strong> &mdash; link in bio, price mention, subtle ask?</li>\n  <li><strong>Metrics</strong> &mdash; saves, CTR, comments, engagement rate</li>\n</ul>\n<p>After three to four weeks, a pattern emerges. Identify your top three to five performing videos.</p>\n\n<h3>Phase 3 &mdash; Scale winners with paid ads (months 3&ndash;6)</h3>\n<p>Take your three to five winning videos. Run them as paid ads.</p>\n<p>Don't remake them. The creator already found the winning angle. You amplify what works.</p>\n<p><strong>Budget:</strong> &euro;300&ndash;500 per video for five days. <strong>Metric:</strong> ROAS.</p>\n<ul class=\"bullets\">\n  <li>ROAS above 3x? Double the budget.</li>\n  <li>ROAS 1.5&ndash;3x? Keep testing audiences.</li>\n  <li>ROAS under 1.5x? Pause. Test the next winner.</li>\n</ul>\n\n<h3>Phase 4 &mdash; Feed the machine continuously</h3>\n<p>While scaling winners, never stop seeding.</p>\n<ul class=\"bullets\">\n  <li><strong>Month 4:</strong> scale two winning ads, seed 10 new creators.</li>\n  <li><strong>Month 5:</strong> pause underperformers, seed 10 more, scale new winners.</li>\n  <li><strong>Month 6+:</strong> keep the cycle &mdash; new content, new hooks, new trends.</li>\n</ul>\n<p>Why? Content ages. Trends shift. Algorithms change. Fresh creator content is your ad fuel.</p>\n\n<h2>Why this works</h2>\n<h3>Authenticity plus scale</h3>\n<p>Your customer already follows these creators. They already trust them. When they see a creator use your product, it's a recommendation, not an ad.</p>\n<ul class=\"bullets\">\n  <li>100+ creators seeded</li>\n  <li>30&ndash;40% post authentic content</li>\n  <li>The top three to five pieces get ad spend</li>\n  <li>Result: lower CAC, higher ROAS</li>\n</ul>\n\n<h3>Data over intuition</h3>\n<p>You're not guessing. By month 4 you know which hooks convert, which CTAs drive clicks, your exact cost per acquisition and your actual ROAS. By month 6 you have predictable unit economics.</p>\n\n<h2>Why most brands fail</h2>\n<ol class=\"bullets\">\n  <li><strong>One-off transactions.</strong> Seed one or two creators, expect results in week two, give up.</li>\n  <li><strong>Wrong metrics.</strong> Track vanity (likes, views) instead of conversions (saves, CTR, CAC).</li>\n  <li><strong>No testing.</strong> Never audit hooks or CTAs, then blame the creator when scaling doesn't work.</li>\n  <li><strong>Too soon.</strong> Treat it as a sprint. Real brands commit six months minimum.</li>\n</ol>\n<p>They never built a system. They bought single posts.</p>\n\n<h2>Month by month</h2>\n<div class=\"tablewrap\"><table>\n<thead><tr><th>Month</th><th>Action</th><th>Cumulative</th><th>Metric</th></tr></thead>\n<tbody>\n<tr><td>1</td><td>Seed 10. Track posts.</td><td>10</td><td>Post rate %</td></tr>\n<tr><td>2</td><td>Seed 20. Weekly audits.</td><td>30</td><td>Hook performance</td></tr>\n<tr><td>3</td><td>Seed 20. Identify winners.</td><td>50</td><td>Top 3&ndash;5 videos</td></tr>\n<tr><td>4</td><td>Scale 2&ndash;3 ads. Seed 10.</td><td>60</td><td>ROAS above 2x</td></tr>\n<tr><td>5</td><td>Pause losers. Seed 10. Scale new winners.</td><td>70</td><td>Cost per click</td></tr>\n<tr><td>6</td><td>Full audit. Double down.</td><td>100+</td><td>Predictable CAC</td></tr>\n</tbody></table></div>\n\n<h2>How to start: a 90-day sprint</h2>\n<ul class=\"bullets\">\n  <li><strong>Days 1&ndash;7:</strong> identify 30 creators talking to your audience. Build the tracking sheet.</li>\n  <li><strong>Days 8&ndash;30:</strong> seed 10 creators. Track who posts. Seed 20 more.</li>\n  <li><strong>Days 31&ndash;60:</strong> audit content weekly. Log hooks, CTAs, engagement. Find the top three to five.</li>\n  <li><strong>Days 61&ndash;90:</strong> run ads on winners at &euro;300&ndash;500 each. Monitor ROAS. Keep seeding.</li>\n</ul>\n<p>By day 90: 50+ creators seeded, two or three ads running profitably, a repeatable system in place.</p>\n\n<h2>The core principle</h2>\n<p class=\"pull\">The creator isn't the strategy. The system is.</p>\n<p>When a TikTok gets 2M views and you get zero sales, you didn't test hooks systematically, track what converts, run ads on proven winners, or feed the machine continuously.</p>\n<p>You're not buying posts. You're building a distribution network that feeds your ads, keeps you top of mind, and scales predictably.</p>\n\n<h2>FAQs</h2>\n<p><strong>Isn't this just influencer marketing?</strong> No. That's transactional &mdash; post, here's payment. This is systematic infrastructure: 100+ creators, test and scale.</p>\n<p><strong>What budget do I need?</strong> Product cost (&euro;500&ndash;1K for 100 creators) plus ad spend (&euro;2&ndash;5K for testing and scaling). Positive ROI usually hits month three or four.</p>\n<p><strong>What post rate should I expect?</strong> 30&ndash;50% of seeded creators post. You filter naturally, and only scale the ones who perform.</p>\n<p><strong>How long until results?</strong> Week 1&ndash;2: posts appear. Week 3&ndash;4: patterns emerge. Week 5&ndash;6: ads running. Month 4&ndash;6: profitable and predictable.</p>\n<p><strong>Micro or big creators?</strong> Start with anyone already talking to your audience. Mid-tier (10K&ndash;100K followers) often outperform mega-influencers. Engagement beats follower count.</p>\n\n<h2>Your move</h2>\n<p>Start this month. Identify 10 creators. Ship product. Watch who posts. Test what converts. Scale winners. Keep seeding.</p>\n<p>By month 6: 100+ creators, proven ads, a repeatable demand machine.</p>\n<p>Creator-led brands don't chase viral moments. They build systems.</p>\n"}, {"slug": "meta-andromeda-engine-paid-ads", "title": "Meta's Andromeda engine just changed how paid ads work — most brands haven't noticed", "date": "2026-04-17", "label": "17 April 2026", "tag": "Paid media", "dek": "There's a new AI engine running behind every Meta campaign. If you still treat organic content and paid ads as two separate things, you're about to understand why your CPMs are higher than they should be.", "body": "\n\n<h2>What is Andromeda, and why does it matter?</h2>\n<p>Meta quietly rolled out Andromeda &mdash; its AI-powered ad retrieval and optimization system &mdash; to power how campaigns are matched to audiences at scale. It's not a new ad format. It's not a new placement. It's the intelligence layer underneath everything.</p>\n<p>What makes it different from previous systems is <em>where it starts</em>.</p>\n<p>Andromeda doesn't build your audience from scratch using demographic inputs and interest categories. It starts from your brand's existing presence on the platform &mdash; your Reels, your posts, your engagement signals. Your organic content is now the foundation Meta's AI uses to understand who your brand is, who it resonates with, and where to spend your budget most efficiently.</p>\n<p class=\"pull\">Your organic footprint is now pre-training data for your paid campaigns.</p>\n\n<h2>What this means in practice</h2>\n<p>The implications are straightforward, and they're significant.</p>\n<p>Brands with a strong organic presence &mdash; consistent content, real engagement, clear creator partnerships &mdash; benefit immediately. The AI has rich signal to work from. It knows your audience before your first euro of ad spend. The result: lower CPMs, faster learning phases, and campaigns that hit their stride earlier.</p>\n<p>Brands with weak or inconsistent organic presence &mdash; or those relying entirely on dark posts and paid-only strategies &mdash; are forcing the AI to guess. And when the AI guesses, you pay for every data point it has to learn on the fly. That cost is built into your CPM whether you see it as a line item or not.</p>\n<p>This isn't a penalty Meta is imposing on anyone. It's simply how a content-signal-based AI system works. Garbage in, expensive out.</p>\n\n<h2>Sound familiar? It should.</h2>\n<p>This is exactly how TikTok's algorithm has operated from the beginning. On TikTok there was never a clean separation between organic reach and paid amplification &mdash; the same content signals that drove organic distribution informed how ads were priced and placed. Brands that understood this built their paid strategy on top of a content engine, not alongside it.</p>\n<p>Meta has now architected its ad system the same way.</p>\n<p>The brands that cracked TikTok early did so by thinking in systems: organic content defines the audience, paid ads scale into it. Andromeda didn't invent this logic. It just made it mandatory on Meta too.</p>\n\n<h2>The brands winning right now built the system first</h2>\n<p>The shift Andromeda represents isn't a tactical update &mdash; it's a structural one. And it validates what creator-led growth has always argued: the creator isn't the strategy, the system is.</p>\n<p>Here's what the system looks like in practice:</p>\n<ol class=\"bullets\">\n  <li><strong>Organic content defines the audience.</strong> Consistent creator-led content &mdash; Reels, posts, collaborative formats &mdash; builds the engagement signal pool Andromeda draws from. This is where audience intelligence is created, not purchased.</li>\n  <li><strong>Paid ads scale into the audience already defined.</strong> Once Meta's AI has strong signal, paid amplification becomes dramatically more efficient. You're not paying to find your audience &mdash; you're paying to reach more of the one already proven to engage.</li>\n  <li><strong>Creator partnerships sit at the intersection.</strong> Creator content generates the strongest organic signal because it's designed to perform: native to the platform, built for engagement, trusted by the audience. When that content feeds the paid system, efficiency compounds.</li>\n</ol>\n<p>Brands still running paid campaigns off branded creative with no organic foundation aren't just missing an opportunity. They're actively subsidising their own inefficiency.</p>\n\n<h2>What to do about it</h2>\n<ul class=\"bullets\">\n  <li><strong>Audit your organic presence honestly.</strong> Frequency, engagement rate, content format mix. What signal are you actually giving Meta's AI to work with?</li>\n  <li><strong>Map your creator partnerships to your paid strategy.</strong> Creator content that performs organically should be seeded into paid amplification, not kept separate.</li>\n  <li><strong>Stop treating organic and paid as different budget conversations.</strong> Andromeda has made them the same conversation. Your media buying strategy and your content strategy need to be planned together.</li>\n</ul>\n\n<h2>What we do differently</h2>\n<p>Andromeda didn't change our approach. It confirmed it.</p>\n<p>We've been building the organic-to-paid flywheel for our clients because we understood that on any algorithm-driven platform, signal quality determines cost efficiency. The brands we work with &mdash; across France, Italy and Europe &mdash; were already positioned for this shift before it had a name.</p>\n<p>We don't separate content strategy from media strategy. We build them as one system: creators generate signal, signal feeds the algorithm, the algorithm makes paid spend more efficient. Every campaign, every market.</p>\n<p>Creator-led growth isn't about hiring influencers and hoping the content lands. It's about building a content system where every post, every Reel, every creator collaboration feeds a signal that makes the next campaign cheaper and smarter than the last.</p>\n<p>That's the game now. Andromeda just made it visible.</p>\n"}, {"slug": "instagram-shoppable-creator-content", "title": "Instagram just made creator content shoppable", "date": "2026-04-04", "label": "4 April 2026", "tag": "Social commerce", "dek": "Instagram is rolling out a feature that could change how brands think about influencer marketing — and while it isn't TikTok Shop, it's a real step toward native creator-led commerce.", "body": "\n<p>As an influencer marketing agency in Paris working with brands across France, Italy and most of Europe, we've been watching this development closely. Here's what's happening.</p>\n\n<h2>What's changed?</h2>\n<p>If you sell on Shopify, you can now sync your product catalog directly into Meta. From there, approved creators can tag your products in their Instagram Reels, posts, Stories and video content.</p>\n<p>When a viewer taps a product tag, they go straight to your site and checkout flow. No more friction. No more \"link in bio\" hunting.</p>\n\n<h2>Why this matters for merchants</h2>\n<p>For years, Instagram commerce has felt clunky. Creators would post about products, then direct followers to a link in their bio, which often led to a Linktree, which then led to the actual product page. Every extra step meant lost conversions.</p>\n<p>This integration changes the game. Creator content becomes natively shoppable. A viewer sees a product they love in a Reel, taps it, and lands directly on your checkout page. The path from discovery to purchase just got dramatically shorter.</p>\n\n<h2>Is this TikTok Shop?</h2>\n<p>Not quite. TikTok Shop offers a fully integrated checkout experience inside the app, complete with live shopping, in-app payments and a dedicated shopping tab. Instagram's approach still routes customers to your own site.</p>\n<p>But for many brands that's actually preferable. You keep control of the customer relationship, the data and the checkout experience. You're building your own asset rather than renting space on someone else's platform.</p>\n\n<h2>The bigger picture</h2>\n<p>Meta is clearly betting on creator-led commerce. They're making it easier for brands to activate creators as genuine sales channels rather than just awareness drivers. For brands already running influencer campaigns, or considering a creator program, this removes a lot of the friction that historically made Instagram less effective than TikTok for direct response.</p>\n<p>The brands that move quickly here will have an advantage. Creator partnerships with shoppable content create a flywheel: great content drives sales, sales data helps you identify your best-performing creators, and those insights let you double down on what's working.</p>\n<p>For brands in France, Italy and across Europe, working with an agency that understands both the local creator ecosystem and these new commerce tools is becoming essential.</p>\n\n<h2>Ready to unlock creator-led growth on Instagram?</h2>\n<p>If you're a brand looking to tap into creator-led growth on Instagram, now's the time to move. We run this exact playbook for fast-scaling brands every day &mdash; from catalog setup to creator recruitment to performance optimization.</p>\n<p>Whether you're targeting French consumers, expanding into the Italian market or scaling across Europe, our team knows the creator landscape inside out.</p>\n<p class=\"note\">The new Add Products experience in Reels is rolling out in the US, Brazil, India, Indonesia and Thailand, and is coming to all 22 Instagram commerce markets. More features and partners are on the way.</p>\n"}, {"slug": "youtube-performance-influencer-marketing", "title": "Why YouTube should be your first choice for performance influencer marketing", "date": "2025-11-05", "label": "5 November 2025", "tag": "Channel strategy", "dek": "Most brands still treat YouTube like a branding channel. It's one of the strongest direct response channels in influencer marketing today — and the data proves it every day.", "body": "\n<p>If your influencer marketing strategy is focused solely on short-form content or social buzz, you're likely leaving serious revenue on the table. YouTube isn't just a platform for awareness; it's one of the strongest direct response channels for influencer marketing today.</p>\n<p>Here's why YouTube should be your go-to platform for performance influencer marketing.</p>\n\n<h2>1. YouTube is built for conversion</h2>\n<p>Unlike other platforms, YouTube makes it easy for audiences to take immediate action. Creators can drive traffic directly to your landing pages or offers through:</p>\n<ul class=\"bullets\">\n  <li>Clickable links in video descriptions</li>\n  <li>Pinned comments</li>\n  <li>QR codes integrated within videos</li>\n</ul>\n<p>Every viewer interaction becomes a potential conversion point. When an audience is engaged, motivated and one click away from your product, the path to purchase is seamless.</p>\n\n<h2>2. YouTube is built for search</h2>\n<p>YouTube isn't just a social platform &mdash; it's the second-largest search engine in the world, right behind Google.</p>\n<p>That means your influencer content doesn't vanish after 24 hours. It keeps showing up in search results, recommendations and related videos, continuously driving organic visibility and conversions long after the campaign ends.</p>\n<p>When creators optimise their videos with the right titles, keywords and tags, your brand's message keeps working for you &mdash; passively, and indefinitely.</p>\n\n<h2>3. YouTube is built for longevity</h2>\n<p>The half-life of a YouTube video far outlasts anything on Instagram, TikTok or X.</p>\n<p>A YouTube influencer campaign doesn't just generate traffic for a few days &mdash; it can deliver measurable results for months or even years. New viewers keep discovering videos, and many convert long after the initial post. That's long-tail performance you simply can't replicate anywhere else.</p>\n\n<h2>4. YouTube is built for trust</h2>\n<p>Audiences on YouTube spend far more time with creators than on any other platform. Longer watch times lead to deeper relationships, stronger trust and higher purchase intent. When a creator you trust recommends a product in a ten-minute review, it carries more weight than a fifteen-second clip ever could.</p>\n<p>That sustained attention is what turns views into conversions, and conversions into loyal customers.</p>\n\n<h2>Performance meets brand impact</h2>\n<p>The best part? You don't have to choose between brand awareness and revenue. YouTube gives you both. Your brand gains exposure through authentic creator storytelling, while still driving measurable ROI through direct conversions.</p>\n<p class=\"pull\">If you're serious about performance influencer marketing, start where the conversions are already happening.</p>\n"}, {"slug": "marketing-funnel-is-broken", "title": "Why your marketing funnel is broken (and the one step you forgot to include)", "date": "2025-10-17", "label": "17 October 2025", "tag": "Funnel strategy", "dek": "Ad → click → landing page → conversion worked when attention was abundant and trust was cheap. There's now a step between awareness and consideration where most brands lose people.", "body": "\n<p>The marketing funnel we've all used for years is officially outdated. The old path looked like this:</p>\n<p class=\"pull\">Ad &rarr; click &rarr; landing page &rarr; conversion.</p>\n<p>It worked when attention was abundant and trust was cheap. But the game has changed &mdash; especially with Gen Z and younger millennials.</p>\n<p>Today there's a new step that sits quietly between awareness and consideration, and it's where most brands lose people: <strong>the customer does their own search.</strong></p>\n\n<h2>What actually happens when someone sees your ad</h2>\n<ol class=\"bullets\">\n  <li><strong>They see your ad or influencer post.</strong> Maybe on Instagram, TikTok or YouTube Shorts. They clock it &mdash; maybe even like it &mdash; but they don't click.</li>\n  <li><strong>They don't visit your site, they go and search.</strong> Most users jump straight to TikTok, Reddit or YouTube to see what other people say.</li>\n  <li><strong>They look for reviews, unboxings and honest takes.</strong> They're not looking for your official content &mdash; they want proof that real people like them actually like your product.</li>\n  <li><strong>If reviews are bad or mixed, they're out.</strong> One or two negative videos, a sceptical Reddit thread or a lukewarm YouTube comment is enough to kill intent.</li>\n  <li><strong>Sometimes they circle back.</strong> If they later see a creator they trust giving a better review, they might reconsider.</li>\n</ol>\n<p>That's the new funnel. And most brands still haven't caught on.</p>\n\n<h2>Why the traditional funnel doesn't work anymore</h2>\n<p>Gen Z is immune to traditional advertising. They've grown up seeing it everywhere &mdash; recent data suggests exposure to 700&ndash;800 ads a day. Which isn't surprising when you consider they spend over seven hours a day on their phones. That's roughly two ads every minute.</p>\n<p>So when marketers try to win through frequency, they're just adding to the noise.</p>\n<p>And here's the real kicker: Gen Z doesn't trust brand-owned channels at all. After TikTok exposed a handful of brands paying influencers to fake \"verified purchase\" reviews through CRM workarounds, they've become professionally sceptical.</p>\n<p>Ask them where they trust information and you'll hear the same three answers: TikTok, Reddit, YouTube. Those are the new trust engines.</p>\n\n<h2>The new path to conversion</h2>\n<ol class=\"bullets\">\n  <li><strong>Exposure.</strong> Paid ad, influencer content or social discovery.</li>\n  <li><strong>Search.</strong> The user jumps to TikTok, Reddit or YouTube to verify.</li>\n  <li><strong>Validation.</strong> A creator or community confirms credibility.</li>\n  <li><strong>Reinforcement.</strong> Retarget with creator content or social proof.</li>\n  <li><strong>Intent and conversion.</strong> Now they're ready to buy.</li>\n</ol>\n<p>Notice something? The most powerful touchpoint &mdash; search and validation &mdash; doesn't belong to you. It belongs to the internet.</p>\n\n<h2>How to win in this new funnel</h2>\n<p>If you want to reach today's consumer, stop trying to control the narrative and start joining it.</p>\n<ul class=\"bullets\">\n  <li><strong>Seed authentic creator content.</strong> Don't script influencers. Let them review your product honestly, even if it's not glowing. Real beats perfect.</li>\n  <li><strong>Be discoverable on TikTok and Reddit.</strong> If people are searching \"is [your brand] legit?\" and you're not part of that conversation, you've already lost.</li>\n  <li><strong>Use creator retargeting.</strong> Don't show another branded ad to someone who ignored your first one. Retarget them with a review from someone they trust.</li>\n  <li><strong>Listen to community feedback.</strong> Reddit threads and TikTok comments are free market research. Treat them that way.</li>\n  <li><strong>Build trust before the click.</strong> When users finally come to your site, they should already believe in you. Your landing page isn't there to convince &mdash; it's there to confirm.</li>\n</ul>\n\n<h2>The big takeaway</h2>\n<p>The most overlooked step in every marketing funnel is now the most important one: the customer does their own search.</p>\n<p>If your brand isn't showing up &mdash; authentically &mdash; in that moment, you're invisible.</p>\n<p class=\"pull\">The brands that win today don't shout louder. They build trust earlier.</p>\n"}];
+  function postRow(p){
+    return '<a class="postrow" href="/blog/'+p.slug+'" data-nav>'+
+      '<div class="when">'+p.label+'</div>'+
+      '<div><h3>'+p.title+'</h3><p>'+p.dek+'</p><span class="tagp">'+p.tag+'</span></div>'+
+      '<div class="arw">\u2192</div></a>';
+  }
+  set("post-list", POSTS.map(postRow).join(""));
+
+  function findPost(slug){
+    for(var i=0;i<POSTS.length;i++){ if(POSTS[i].slug === slug) return POSTS[i]; }
+    return null;
+  }
+  function openPost(slug){
+    var p = findPost(slug), idx = el("blog-index"), pv = el("blog-post"), body = el("post-body");
+    if(!p || !body){ closePost(); return false; }
+    var more = POSTS.filter(function(o){ return o.slug !== p.slug; }).slice(0,2);
+    body.innerHTML =
+      '<div class="kicker"><span>'+p.tag+'</span><span>'+p.label+'</span></div>'+
+      '<h1>'+p.title+'</h1>'+
+      '<p class="dek">'+p.dek+'</p>'+
+      '<div class="byline">By Negin Rostampour &middot; NM Agency, Paris</div>'+
+      '<div class="body">'+p.body+'</div>'+
+      '<div class="postnext"><p class="eyebrow">Keep reading</p><div class="postlist" style="margin-top:14px">'+
+        more.map(postRow).join("")+'</div></div>';
+    if(idx) idx.hidden = true;
+    if(pv) pv.hidden = false;
+    return true;
+  }
+  function closePost(){
+    var idx = el("blog-index"), pv = el("blog-post");
+    if(pv) pv.hidden = true;
+    if(idx) idx.hidden = false;
+  }
+
   /* routing — clean paths (/services), with a #/ fallback where pushState is unavailable */
-  var ROUTES = ["home","services","work","about","contact"];
+  var ROUTES = ["home","services","work","about","contact","blog"];
   var PATHMODE = (location.protocol === "http:" || location.protocol === "https:") &&
                  !!(window.history && history.pushState);
 
-  function pathFor(name){ return name === "home" ? "/" : "/" + name; }
-  function nameFor(href){
-    if(!href) return "home";
-    var v = href.replace(/^#\/?/,"").replace(/^\/+|\/+$/g,"").split(/[/?#]/)[0].replace(/\.html$/,"");
-    return ROUTES.indexOf(v) === -1 ? "home" : v;
+  function pathFor(name, slug){
+    var base = name === "home" ? "/" : "/" + name;
+    return (slug ? base + "/" + slug : base);
+  }
+  function parseRef(ref){
+    if(!ref) return {name:"home", slug:""};
+    var raw = ref.replace(/^#\/?/,"").replace(/^https?:\/\/[^/]+/,"");
+    var segs = raw.split(/[?#]/)[0].split("/").filter(Boolean);
+    if(segs.length && /^index\.html?$/i.test(segs[segs.length-1])) segs.pop();
+    var name = segs.length ? segs[0].replace(/\.html$/,"") : "home";
+    if(ROUTES.indexOf(name) === -1) return {name:"home", slug:""};
+    return {name:name, slug: segs[1] || ""};
   }
   function currentRoute(){
-    var h = location.hash.replace(/^#\/?/,"").split("/")[0];
-    if(h && ROUTES.indexOf(h) !== -1) return h;
-    var segs = location.pathname.replace(/\/+$/,"").split("/");
-    var last = (segs[segs.length-1] || "").replace(/\.html$/,"");
-    return ROUTES.indexOf(last) === -1 ? "home" : last;
+    var h = location.hash.replace(/^#\/?/,"");
+    if(h){ var r = parseRef(h); if(r.name !== "home" || /^home\b/.test(h)) return r; }
+    return parseRef(location.pathname);
   }
 
-  function go(name){
+  function go(r){
+    var name = r.name, slug = r.slug || "";
     if(ROUTES.indexOf(name) === -1) name = "home";
     var i, secs = document.querySelectorAll("[data-route]");
     for(i=0;i<secs.length;i++){ secs[i].hidden = secs[i].getAttribute("data-route") !== name; }
     if(name !== "work") closeCase();
+    if(name === "blog"){ if(!slug || !openPost(slug)) closePost(); }
+    else { closePost(); }
     var links = document.querySelectorAll(".nav a[data-nav]");
     for(i=0;i<links.length;i++){
-      links[i].classList.toggle("on", nameFor(links[i].getAttribute("href")) === name);
+      links[i].classList.toggle("on", parseRef(links[i].getAttribute("href")).name === name);
     }
     var n = el("nav"); if(n) n.classList.remove("open");
     var b = el("burger"); if(b) b.setAttribute("aria-expanded","false");
+    applyHead({name:name, slug:slug});
   }
 
-  function navigate(name, scroll){
-    if(ROUTES.indexOf(name) === -1) name = "home";
+  var FIRST_PAINT = true;
+  function applyHead(r){
+    if(FIRST_PAINT){ FIRST_PAINT = false; return; }   /* the served page already has the right head */
+    var t = TITLES[r.name] || SITE_NAME, d = DESCS[r.name] || "", u = pathFor(r.name, r.slug);
+    if(r.name === "blog" && r.slug){
+      var p = findPost(r.slug);
+      if(p){ t = p.title + " | " + SITE_NAME; d = p.dek; }
+    }
+    document.title = t;
+    var m = document.querySelector('meta[name="description"]'); if(m) m.setAttribute("content", d);
+    var c = document.querySelector('link[rel="canonical"]');
+    if(c) c.setAttribute("href", location.origin + (u === "/" ? "/" : u));
+  }
+
+  function navigate(name, slug){
+    var r = {name:name, slug:slug || ""};
+    if(ROUTES.indexOf(r.name) === -1) r.name = "home";
     if(PATHMODE){
-      try{ history.pushState({r:name}, "", pathFor(name)); }
-      catch(err){ PATHMODE = false; location.hash = "#/" + name; return; }
-      go(name);
-      if(scroll !== false) window.scrollTo(0,0);
+      try{ history.pushState({r:r.name, s:r.slug}, "", pathFor(r.name, r.slug)); }
+      catch(err){ PATHMODE = false; location.hash = "#" + pathFor(r.name, r.slug); return; }
+      go(r); window.scrollTo(0,0);
     } else {
-      if(location.hash.replace(/^#\/?/,"").split("/")[0] === name){ go(name); }
-      else { location.hash = "#/" + name; }
+      var want = "#" + pathFor(r.name, r.slug);
+      if(location.hash === want){ go(r); window.scrollTo(0,0); }
+      else { location.hash = want; }
     }
   }
 
@@ -1591,7 +1777,8 @@ p{margin:0}
     if(e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     if(a.target && a.target !== "_self") return;
     e.preventDefault();
-    navigate(nameFor(a.getAttribute("href")));
+    var r = parseRef(a.getAttribute("href"));
+    navigate(r.name, r.slug);
   });
 
   window.addEventListener("popstate", function(){ go(currentRoute()); window.scrollTo(0,0); });
@@ -1643,7 +1830,7 @@ p{margin:0}
 
     var SEL = ".sechead, .hero-inner > *, .hero-viz, .viz-chips .chip, .card, .btile, .case, "+
               ".step, .quote, .member, .ctaband, .talent, .svc, .faq details, "+
-              ".deets .r, .logowall .plate, .marquee-cap, .band-inner > *, "+
+              ".deets .r, .logowall .plate, .marquee-cap, .band-inner > *, .postrow, "+
               ".process-grid > *, .carousel-head, .detail > *, .bullets li";
 
     function parseNum(str){

@@ -343,6 +343,13 @@ p{margin:0}
 .g3 > .cta-card{grid-column:span 3}
 @media (max-width:920px){.g3 > .cta-card{grid-column:auto}}
 .card .viz{aspect-ratio:16/9}
+.svc4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1100px){.svc4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.svc4{grid-template-columns:minmax(0,1fr)}}
+.svc4 > .cta-card{grid-column:1/-1}
+a.card-link{text-decoration:none;color:inherit;cursor:pointer}
+a.card-link:hover h3{color:var(--accent)}
+a.card-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .card h3{font-size:20px;font-stretch:108%}
 .card p{font-size:15px;color:var(--ink-2);line-height:1.58}
 .card .body{display:flex;flex-direction:column;gap:9px;padding:4px 4px 6px}
@@ -472,6 +479,8 @@ p{margin:0}
 @media (min-width:880px){.svc{grid-template-columns:minmax(0,.34fr) minmax(0,.66fr);gap:48px}}
 .svc .num{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;color:var(--accent);margin-bottom:10px}
 .svc h3{font-size:clamp(23px,3vw,32px)}
+.svc h3 a.svc-link{text-decoration:none;color:inherit}
+.svc h3 a.svc-link:hover{color:var(--accent)}
 .svc .mkts{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;color:var(--muted);margin-top:12px}
 .bullets{list-style:none;margin:16px 0 0;padding:0;display:grid}
 .bullets li{
@@ -808,7 +817,7 @@ p{margin:0}
         <h2>Three channels, one growth engine</h2>
         <p class="lead">We sit at the intersection of brand identity and digital strategy, offering influencer, digital ads and search engine optimisation strategy.</p>
       </div>
-      <div class="grid g3" id="svc-cards"></div>
+      <div class="grid g3 svc4" id="svc-cards"></div>
     </div>
   </section>
 
@@ -1281,6 +1290,8 @@ p{margin:0}
         '<circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>',
     markets:'<circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8"/>'+
             '<path d="M12 3.6c2.6 2.6 2.6 14.2 0 16.8"/><path d="M12 3.6c-2.6 2.6-2.6 14.2 0 16.8"/>',
+    partnership:'<path d="M10 14a3.6 3.6 0 0 0 5.1 0l3.1-3.1a3.6 3.6 0 0 0-5.1-5.1l-1 1"/>'+
+                '<path d="M14 10a3.6 3.6 0 0 0-5.1 0l-3.1 3.1a3.6 3.6 0 0 0 5.1 5.1l1-1"/>',
     talent:'<path d="m12 3.8 2.5 5.1 5.6.8-4.1 4 1 5.6L12 16.6l-5 2.7 1-5.6-4.1-4 5.6-.8z"/>',
     next:'<circle cx="12" cy="12" r="8.4"/><path d="M8.9 12h6.2"/><path d="m12.4 9.3 2.7 2.7-2.7 2.7"/>'
   };
@@ -1305,10 +1316,13 @@ p{margin:0}
     {t:"Influencer Marketing",ic:"01",k:"influencer",
      d:"Gifting and seeding campaigns, creator research and sourcing, negotiation and contract creation, conversion optimization strategies, and performance tracking.",
      tags:["Creator research","Gifting &amp; seeding","Contracts"]},
-    {t:"Meta &amp; Google Ads",ic:"02",k:"ads",
+    {t:"Partnership Ads",ic:"02",k:"partnership",href:"/services/partnership-ads/",
+     d:"Creator content run as paid ads. Whitelisting and dark posting keep the trust audiences already have and add the targeting, testing, and reporting of paid media.",
+     tags:["Whitelisting","Dark posting","Paid amplification"]},
+    {t:"Meta &amp; Google Ads",ic:"03",k:"ads",
      d:"Social media ad strategy, creative creation, and detailed performance reporting across platforms.",
      tags:["Ad copy","Keyword mapping","Conversion tracking"]},
-    {t:"European Market Expansion",ic:"03",k:"markets",
+    {t:"European Market Expansion",ic:"04",k:"markets",
      d:"Localized tone adaptation, regional partnerships, content development, and budget optimization for France, Italy, Germany, and Spain.",
      tags:["FR","IT","DE","ES"]},
     {t:"Not sure which channel fits?",ic:"→",cta:true,k:"next",
@@ -1472,11 +1486,15 @@ p{margin:0}
      p:"Gifting and seeding campaigns, creator research and sourcing, negotiation and contract creation, conversion optimization strategies, and performance tracking.",
      b:["Creator research","Gifting &amp; seeding","Contract negotiation","Conversion optimization","Performance tracking"],
      m:"FR · IT · ES · DE · UK · US"},
-    {n:"/ 02",h:"Meta &amp; Google Ads",k:"ads",
+    {n:"/ 02",h:"Partnership Ads",k:"partnership",href:"/services/partnership-ads/",
+     p:"Creator content works because the audience already trusts the person behind it. Partnership ads keep that trust and add the targeting, testing, and reporting that paid media needs, so every euro is measured against results.",
+     b:["Whitelisting","Dark posting","Paid amplification of creator content","Creative testing","Performance reporting"],
+     m:"Meta · TikTok · YouTube"},
+    {n:"/ 03",h:"Meta &amp; Google Ads",k:"ads",
      p:"Social media ad strategy, creative creation, and detailed performance reporting across platforms.",
      b:["Ad copywriting","Keyword mapping","Campaign optimization","Conversion tracking &amp; event setup"],
      m:"Meta · Google · TikTok"},
-    {n:"/ 03",h:"European Market Expansion",k:"markets",
+    {n:"/ 04",h:"European Market Expansion",k:"markets",
      p:"Localized tone adaptation, regional partnerships, content development, and budget optimization for France, Italy, Germany, and Spain.",
      b:["Market entry strategy","Localized content","Local influencers","Conversion optimization"],
      m:"FR · IT · ES · DE"}
@@ -1542,12 +1560,13 @@ p{margin:0}
     var foot = s.cta
       ? '<div class="taglist"><a class="textlink" href="/contact" data-nav>Book a call →</a></div>'
       : '<div class="taglist">'+s.tags.map(function(t){return '<span class="tag">'+t+'</span>';}).join("")+'</div>';
-    return '<article class="card'+(s.cta?" cta-card":"")+'"'+(s.cta?' style="background:var(--accent-2-soft);border-color:color-mix(in srgb,var(--accent-2) 30%,transparent)"':'')+'>'+
+    var tagName = s.href ? 'a' : 'article';
+    return '<'+tagName+(s.href?' href="'+s.href+'"':'')+' class="card'+(s.href?" card-link":"")+(s.cta?" cta-card":"")+'"'+(s.cta?' style="background:var(--accent-2-soft);border-color:color-mix(in srgb,var(--accent-2) 30%,transparent)"':'')+'>'+
       (s.cta
         ? '<span class="svc-ico inline" style="background:var(--accent-3)">'+ico(s.k)+'</span>'
         : '<div class="viz'+(i%2?" warm":"")+'"><span class="svc-ico"'+(i%2?' style="background:var(--accent-3)"':'')+'>'+ico(s.k)+'</span></div>')+
       '<div class="body"><span class="idx">'+(s.cta?"/ Next":"/ "+s.ic)+'</span><h3>'+s.t+'</h3><p>'+s.d+'</p></div>'+
-      foot+'</article>';
+      foot+'</'+tagName+'>';
   }).join(""));
 
   /* steps */
@@ -1560,9 +1579,10 @@ p{margin:0}
   /* services long list */
   set("svc-list", SERVICES.map(function(s){
     return '<article class="svc"><div><span class="svc-mark">'+ico(s.k)+'</span>'+
-      '<div class="num">'+s.n+'</div><h3>'+s.h+'</h3>'+
+      '<div class="num">'+s.n+'</div><h3>'+(s.href?'<a class="svc-link" href="'+s.href+'">'+s.h+'</a>':s.h)+'</h3>'+
       '<div class="mkts">'+s.m+'</div></div><div><p class="lead">'+s.p+'</p>'+
-      '<ul class="bullets">'+s.b.map(function(b){return "<li>"+b+"</li>";}).join("")+'</ul></div></article>';
+      '<ul class="bullets">'+s.b.map(function(b){return "<li>"+b+"</li>";}).join("")+'</ul>'+
+      (s.href?'<p style="margin-top:20px"><a class="textlink" href="'+s.href+'">Explore '+s.h+' →</a></p>':'')+'</div></article>';
   }).join(""));
 
   /* plan */

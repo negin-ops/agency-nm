@@ -479,6 +479,8 @@ a.card-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media (min-width:880px){.svc{grid-template-columns:minmax(0,.34fr) minmax(0,.66fr);gap:48px}}
 .svc .num{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;color:var(--accent);margin-bottom:10px}
 .svc h3{font-size:clamp(23px,3vw,32px)}
+.svc h3 a.svc-link{text-decoration:none;color:inherit}
+.svc h3 a.svc-link:hover{color:var(--accent)}
 .svc .mkts{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;color:var(--muted);margin-top:12px}
 .bullets{list-style:none;margin:16px 0 0;padding:0;display:grid}
 .bullets li{
@@ -1484,11 +1486,15 @@ a.card-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
      p:"Gifting and seeding campaigns, creator research and sourcing, negotiation and contract creation, conversion optimization strategies, and performance tracking.",
      b:["Creator research","Gifting &amp; seeding","Contract negotiation","Conversion optimization","Performance tracking"],
      m:"FR · IT · ES · DE · UK · US"},
-    {n:"/ 02",h:"Meta &amp; Google Ads",k:"ads",
+    {n:"/ 02",h:"Partnership Ads",k:"partnership",href:"/services/partnership-ads/",
+     p:"Creator content works because the audience already trusts the person behind it. Partnership ads keep that trust and add the targeting, testing, and reporting that paid media needs, so every euro is measured against results.",
+     b:["Whitelisting","Dark posting","Paid amplification of creator content","Creative testing","Performance reporting"],
+     m:"Meta · TikTok · YouTube"},
+    {n:"/ 03",h:"Meta &amp; Google Ads",k:"ads",
      p:"Social media ad strategy, creative creation, and detailed performance reporting across platforms.",
      b:["Ad copywriting","Keyword mapping","Campaign optimization","Conversion tracking &amp; event setup"],
      m:"Meta · Google · TikTok"},
-    {n:"/ 03",h:"European Market Expansion",k:"markets",
+    {n:"/ 04",h:"European Market Expansion",k:"markets",
      p:"Localized tone adaptation, regional partnerships, content development, and budget optimization for France, Italy, Germany, and Spain.",
      b:["Market entry strategy","Localized content","Local influencers","Conversion optimization"],
      m:"FR · IT · ES · DE"}
@@ -1573,9 +1579,10 @@ a.card-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   /* services long list */
   set("svc-list", SERVICES.map(function(s){
     return '<article class="svc"><div><span class="svc-mark">'+ico(s.k)+'</span>'+
-      '<div class="num">'+s.n+'</div><h3>'+s.h+'</h3>'+
+      '<div class="num">'+s.n+'</div><h3>'+(s.href?'<a class="svc-link" href="'+s.href+'">'+s.h+'</a>':s.h)+'</h3>'+
       '<div class="mkts">'+s.m+'</div></div><div><p class="lead">'+s.p+'</p>'+
-      '<ul class="bullets">'+s.b.map(function(b){return "<li>"+b+"</li>";}).join("")+'</ul></div></article>';
+      '<ul class="bullets">'+s.b.map(function(b){return "<li>"+b+"</li>";}).join("")+'</ul>'+
+      (s.href?'<p style="margin-top:20px"><a class="textlink" href="'+s.href+'">Explore '+s.h+' →</a></p>':'')+'</div></article>';
   }).join(""));
 
   /* plan */

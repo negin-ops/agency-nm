@@ -1823,24 +1823,18 @@ a.card-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   }
 
   /* forms -> FormSubmit (delivers to hello@agency-nm.com); mailto as fallback */
-  var FORM_ENDPOINT = "https://formsubmit.co/ajax/hello@agency-nm.com";
+  var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbzq4FOt-yoOB90_6yk06tbiHGLBYwb_2SyaVymf3YvS-OYGzuJLapafzYxvaSGQRCw11w/exec";
   function mailto(subject, body){
     window.location.href = "mailto:hello@agency-nm.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
   }
   function sendForm(fields, subject, onOk, onFail){
+    /* Apps Script sends no CORS headers, so the request is sent no-cors:
+       it is delivered, but the response cannot be read. */
     var data = new FormData();
     Object.keys(fields).forEach(function(k){ data.append(k, fields[k]); });
     data.append("_subject", subject);
-    data.append("_captcha", "false");
-    data.append("_template", "table");
-    if(fields.email){ data.append("_replyto", fields.email); }
-    fetch(FORM_ENDPOINT, {method:"POST", body:data, headers:{"Accept":"application/json"}})
-      .then(function(r){
-        return r.json().catch(function(){ return {}; }).then(function(j){ return {ok:r.ok, j:j}; });
-      })
-      .then(function(res){
-        if(res.ok && String(res.j.success) === "true"){ onOk(); } else { onFail(); }
-      })
+    fetch(FORM_ENDPOINT, {method:"POST", body:data, mode:"no-cors"})
+      .then(function(){ onOk(); })
       .catch(onFail);
   }
   var form = el("brief-form");

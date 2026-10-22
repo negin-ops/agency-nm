@@ -749,6 +749,14 @@ p{margin:0}
   img{max-width:100%}
   [hidden]{display:none!important}
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-776DGW3RZZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-776DGW3RZZ');
+</script>
 </head>
 <body>
 
@@ -1795,23 +1803,61 @@ p{margin:0}
     });
   }
 
-  /* forms -> mailto */
+  /* forms -> FormSubmit (delivers to hello@agency-nm.com); mailto as fallback */
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/hello@agency-nm.com";
   function mailto(subject, body){
     window.location.href = "mailto:hello@agency-nm.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  }
+  function sendForm(fields, subject, onOk, onFail){
+    var data = new FormData();
+    Object.keys(fields).forEach(function(k){ data.append(k, fields[k]); });
+    data.append("_subject", subject);
+    data.append("_captcha", "false");
+    data.append("_template", "table");
+    if(fields.email){ data.append("_replyto", fields.email); }
+    fetch(FORM_ENDPOINT, {method:"POST", body:data, headers:{"Accept":"application/json"}})
+      .then(function(r){
+        return r.json().catch(function(){ return {}; }).then(function(j){ return {ok:r.ok, j:j}; });
+      })
+      .then(function(res){
+        if(res.ok && String(res.j.success) === "true"){ onOk(); } else { onFail(); }
+      })
+      .catch(onFail);
   }
   var form = el("brief-form");
   if(form){
     form.addEventListener("submit", function(e){
       e.preventDefault();
+      if(!form.reportValidity()) return;
       var v = function(id){ var n = el(id); return n ? n.value.trim() : ""; };
-      var body = "Name: "+(v("f-name")||"—")+"\n"+
-                 "Brand: "+(v("f-brand")||"—")+"\n"+
-                 "Email: "+(v("f-email")||"—")+"\n"+
-                 "Priority market: "+v("f-market")+"\n"+
-                 "Interested in: "+v("f-service")+"\n\nGoals:\n"+(v("f-goals")||"—")+"\n";
+      var fields = {
+        name: v("f-name"), brand: v("f-brand"), email: v("f-email"),
+        market: v("f-market"), service: v("f-service"), goals: v("f-goals")
+      };
+      var subject = "Strategy session — "+(fields.brand||fields.name||"New enquiry");
+      var btn = form.querySelector("button[type=submit]");
       var note = el("form-note");
-      if(note){ note.textContent = "Opening your mail app… if nothing happens, email hello@agency-nm.com directly."; note.style.color = "var(--accent)"; }
-      mailto("Strategy session — "+(v("f-brand")||v("f-name")||"New enquiry"), body);
+      var setNote = function(text, color){
+        if(note){ note.textContent = text; note.style.color = color || ""; }
+      };
+      if(btn){ btn.disabled = true; }
+      setNote("Sending your brief…", "var(--accent)");
+      sendForm(fields, subject,
+        function(){
+          setNote("Thanks, your brief is on its way to hello@agency-nm.com. We'll be in touch shortly.", "var(--accent)");
+          form.reset();
+          if(btn){ btn.disabled = false; }
+        },
+        function(){
+          setNote("We couldn't send it from the site. Opening your mail app instead…", "var(--accent)");
+          var body = "Name: "+(fields.name||"—")+"\n"+
+                     "Brand: "+(fields.brand||"—")+"\n"+
+                     "Email: "+(fields.email||"—")+"\n"+
+                     "Priority market: "+fields.market+"\n"+
+                     "Interested in: "+fields.service+"\n\nGoals:\n"+(fields.goals||"—")+"\n";
+          mailto(subject, body);
+          if(btn){ btn.disabled = false; }
+        });
     });
   }
   var band = el("band-form");
@@ -1819,7 +1865,19 @@ p{margin:0}
     band.addEventListener("submit", function(e){
       e.preventDefault();
       var em = el("band-email");
-      mailto("Hello NM Agency", "My email: "+((em&&em.value.trim())||"—")+"\n\nI'd like to hear more about:\n");
+      var email = em ? em.value.trim() : "";
+      if(!email || (em && !em.checkValidity())){ if(em){ em.reportValidity(); } return; }
+      var btn = band.querySelector("button[type=submit]");
+      if(btn){ btn.disabled = true; }
+      sendForm({email: email, message: "Enquiry from the website footer / band form"}, "Hello NM Agency",
+        function(){
+          if(btn){ btn.textContent = "Sent — thank you"; }
+          if(em){ em.value = ""; }
+        },
+        function(){
+          mailto("Hello NM Agency", "My email: "+email+"\n\nI'd like to hear more about:\n");
+          if(btn){ btn.disabled = false; }
+        });
     });
   }
 

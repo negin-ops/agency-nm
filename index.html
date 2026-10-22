@@ -1191,25 +1191,6 @@ a.card-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 </main>
 
-<!-- ================= NEWSLETTER BAND ================= -->
-<div class="band">
-  <div class="wrap band-inner">
-    <div>
-      <h3>Growth notes from Paris — no spam, just what's working right now.</h3>
-      <div class="socials">
-        <a href="https://www.instagram.com/nm.marketing.agency/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-        <a href="https://www.linkedin.com/company/agencynm" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
-        <a href="mailto:hello@agency-nm.com" aria-label="Email">@</a>
-      </div>
-    </div>
-    <form class="band-form" id="band-form">
-      <label class="visually-hidden" for="band-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
-      <input id="band-email" type="email" placeholder="you@brand.com" autocomplete="email">
-      <button class="btn btn-primary" type="submit">Get in touch <span class="arw">→</span></button>
-    </form>
-  </div>
-</div>
-
 <footer class="foot">
   <div class="wrap top">
     <div>
@@ -1873,27 +1854,6 @@ a.card-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
         });
     });
   }
-  var band = el("band-form");
-  if(band){
-    band.addEventListener("submit", function(e){
-      e.preventDefault();
-      var em = el("band-email");
-      var email = em ? em.value.trim() : "";
-      if(!email || (em && !em.checkValidity())){ if(em){ em.reportValidity(); } return; }
-      var btn = band.querySelector("button[type=submit]");
-      if(btn){ btn.disabled = true; }
-      sendForm({email: email, message: "Enquiry from the website footer / band form"}, "Hello NM Agency",
-        function(){
-          if(btn){ btn.textContent = "Sent — thank you"; }
-          if(em){ em.value = ""; }
-        },
-        function(){
-          mailto("Hello NM Agency", "My email: "+email+"\n\nI'd like to hear more about:\n");
-          if(btn){ btn.disabled = false; }
-        });
-    });
-  }
-
   /* ================= MOTION ================= */
   (function(){
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;

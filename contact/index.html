@@ -1074,7 +1074,6 @@ p{margin:0}
         <div class="viz-chips" style="max-width:520px">
           <div class="chip"><span class="n">2025</span><span class="k">Founded in Paris</span></div>
           <div class="chip"><span class="n">6</span><span class="k">Years of experience</span></div>
-          <div class="chip"><span class="n">3</span><span class="k">Working languages</span></div>
         </div>
       </div>
     </div>
@@ -1132,22 +1131,23 @@ p{margin:0}
 
   <section class="sec line">
     <div class="wrap contact-grid">
-      <form id="brief-form" novalidate>
+      <form id="brief-form">
         <div class="field">
           <label for="f-name">Your name</label>
-          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Dupont">
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Dupont" required>
         </div>
         <div class="field">
           <label for="f-brand">Brand</label>
-          <input id="f-brand" name="brand" type="text" placeholder="Brand or company name">
+          <input id="f-brand" name="brand" type="text" placeholder="Brand or company name" required>
         </div>
         <div class="field">
           <label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@brand.com">
+          <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@brand.com" required>
         </div>
         <div class="field">
           <label for="f-market">Priority market</label>
-          <select id="f-market" name="market">
+          <select id="f-market" name="market" required>
+            <option value="" disabled selected>Choose a market</option>
             <option>France</option><option>Italy</option><option>Spain</option>
             <option>Germany</option><option>United Kingdom</option><option>United States</option>
             <option>Multiple markets</option>
@@ -1155,7 +1155,8 @@ p{margin:0}
         </div>
         <div class="field">
           <label for="f-service">What you're after</label>
-          <select id="f-service" name="service">
+          <select id="f-service" name="service" required>
+            <option value="" disabled selected>Choose one</option>
             <option>Influencer marketing</option>
             <option>Meta &amp; Google Ads</option>
             <option>European market expansion</option><option>Talent representation</option>
@@ -1164,7 +1165,7 @@ p{margin:0}
         </div>
         <div class="field">
           <label for="f-goals">Your goals</label>
-          <textarea id="f-goals" name="goals" placeholder="Where you are now, and what growth would look like in the next two quarters."></textarea>
+          <textarea id="f-goals" name="goals" required placeholder="Where you are now, and what growth would look like in the next two quarters."></textarea>
         </div>
         <button class="btn btn-primary" type="submit">Send the brief <span class="arw">→</span></button>
         <p class="small" id="form-note" style="margin-top:14px">Your brief goes straight to hello@agency-nm.com.</p>
@@ -1833,6 +1834,10 @@ p{margin:0}
       var setNote = function(text, color){
         if(note){ note.textContent = text; note.style.color = color || ""; }
       };
+      if(["f-name","f-brand","f-email","f-goals"].some(function(id){ var n = el(id); return !n || !n.value.trim(); })){
+        setNote("Please fill in every field to send your brief.");
+        return;
+      }
       if(btn){ btn.disabled = true; }
       setNote("Sending your brief…", "var(--accent)");
       sendForm(fields, subject,

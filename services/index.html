@@ -546,6 +546,10 @@ a.card-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .faq details[open] summary::after{content:"–"}
 .faq .ans{padding:0 0 24px}
 .faq .ans p{font-size:15.5px;color:var(--ink-2);line-height:1.65;max-width:70ch}
+.faq .ans ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.faq .ans li{position:relative;padding-left:22px;font-size:15.5px;color:var(--ink-2);line-height:1.65;max-width:70ch}
+.faq .ans li::before{content:"";position:absolute;left:4px;top:10px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.faq .ans li strong{color:var(--ink);font-weight:600}
 
 /* ============ TALENT ============ */
 .talent{
@@ -1543,7 +1547,11 @@ a.card-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
     {q:"What types of industries do you work with?",
      a:"Fashion &amp; luxury, beauty &amp; skincare, hospitality &amp; tourism, and tech &amp; lifestyle — for both startups and established brands."},
     {q:"Is your agency based in Paris? Do you work internationally?",
-     a:"We're based in Paris and support international brands targeting the French, Italian, Spanish, UK and US markets through localized campaigns."}
+     a:"We're based in Paris and support international brands targeting the French, Italian, Spanish, UK and US markets through localized campaigns."},
+    {q:"What does “growth marketing partner” mean?",
+     a:"A growth marketing partner works as an extension of your team, not just a provider that completes tasks. Instead of focusing on a single channel or campaign, we look at the whole picture: how people discover your brand, what makes them engage, and what turns them into customers. We measure our work against business outcomes such as leads, sales, and retention, and we adjust our approach based on what the data shows."},
+    {q:"What sets a growth marketing agency apart from other marketing agencies?",
+     a:"<p>Many traditional agencies work project by project. They deliver a campaign, a set of posts, or a creative concept, and the relationship often ends with that deliverable. A growth marketing agency works continuously and is judged on results:</p><ul><li><strong>Goal-driven:</strong> We start from your business objectives and work back to the actions that move them, rather than from a fixed list of deliverables.</li><li><strong>Test and learn:</strong> We run experiments, review them every week, and keep what works.</li><li><strong>Full-funnel view:</strong> We connect content, social media, and paid efforts instead of managing each one in isolation.</li><li><strong>Accountability:</strong> Our reporting focuses on metrics that affect your business, not vanity numbers.</li></ul>"}
   ];
 
   function el(id){return document.getElementById(id);}
@@ -1624,7 +1632,7 @@ a.card-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
   /* faq */
   set("faq", FAQS.map(function(f,i){
-    return '<details'+(i===0?" open":"")+'><summary>'+f.q+'</summary><div class="ans"><p>'+f.a+'</p></div></details>';
+    return '<details'+(i===0?" open":"")+'><summary>'+f.q+'</summary><div class="ans">'+(f.a.indexOf("<")===-1?"<p>"+f.a+"</p>":f.a)+'</div></details>';
   }).join(""));
 
   /* case cards */

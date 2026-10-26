@@ -1124,7 +1124,7 @@ p{margin:0}
   <div class="wrap hero">
     <div class="hero-inner">
       <span class="pill"><span class="dot"></span> Contact</span>
-      <h1 style="font-size:clamp(32px,5.2vw,60px);max-width:16ch">Book a Free <span class="hl">30-Min</span> Strategy Session</h1>
+      <h1 style="font-size:clamp(32px,5.2vw,60px);max-width:16ch">Do you have a <span class="hl">project?</span></h1>
       <p class="lead">Tell us about your brand and your goals. We'll review your submission and come back to you with a tailored perspective on how we can help you grow.</p>
     </div>
   </div>
@@ -1141,7 +1141,7 @@ p{margin:0}
           <input id="f-brand" name="brand" type="text" placeholder="Brand or company name" required>
         </div>
         <div class="field">
-          <label for="f-email">Email</label>
+          <label for="f-email">Professional email</label>
           <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@brand.com" required>
         </div>
         <div class="field">
@@ -1161,6 +1161,16 @@ p{margin:0}
             <option>Meta &amp; Google Ads</option>
             <option>European market expansion</option><option>Talent representation</option>
             <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-budget">Annual budget</label>
+          <select id="f-budget" name="budget" required>
+            <option value="" disabled selected>Choose a range</option>
+            <option>De 5 000€ à 20 000€</option>
+            <option>De 20 000€ à 50 000€</option>
+            <option>De 50 000€ à 100 000€</option>
+            <option>Plus de 100 000€</option>
           </select>
         </div>
         <div class="field">
@@ -1817,15 +1827,24 @@ p{margin:0}
       .then(function(){ onOk(); })
       .catch(onFail);
   }
+  var PERSONAL_DOMAINS = ["gmail.com","googlemail.com","yahoo.com","yahoo.fr","hotmail.com","hotmail.fr","outlook.com","outlook.fr","live.com","live.fr","msn.com","icloud.com","me.com","aol.com","gmx.com","gmx.fr","proton.me","protonmail.com","yandex.com","orange.fr","wanadoo.fr","free.fr","laposte.net","sfr.fr","neuf.fr","bbox.fr"];
+  function checkProEmail(){
+    var field = el("f-email");
+    if(!field) return;
+    var domain = (field.value.split("@")[1] || "").trim().toLowerCase();
+    field.setCustomValidity(PERSONAL_DOMAINS.indexOf(domain) !== -1 ? "Please use your professional email address." : "");
+  }
+  if(el("f-email")){ el("f-email").addEventListener("input", checkProEmail); }
   var form = el("brief-form");
   if(form){
     form.addEventListener("submit", function(e){
       e.preventDefault();
+      checkProEmail();
       if(!form.reportValidity()) return;
       var v = function(id){ var n = el(id); return n ? n.value.trim() : ""; };
       var fields = {
         name: v("f-name"), brand: v("f-brand"), email: v("f-email"),
-        market: v("f-market"), service: v("f-service"), goals: v("f-goals")
+        market: v("f-market"), service: v("f-service"), budget: v("f-budget"), goals: v("f-goals")
       };
       var subject = "Strategy session — "+(fields.brand||fields.name||"New enquiry");
       var btn = form.querySelector("button[type=submit]");

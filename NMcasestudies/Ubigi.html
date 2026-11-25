@@ -6,6 +6,11 @@
 <title>Ubigi case study: Ten creators a month across Europe and Latin America | NM Agency</title>
 <meta name="description" content="A global leader in eSIM connectivity strengthening its presence in new markets.">
 <link rel="canonical" href="https://www.agency-nm.com/NMcasestudies/Ubigi">
+<link rel="alternate" hreflang="en" href="https://www.agency-nm.com/NMcasestudies/Ubigi">
+<link rel="alternate" hreflang="fr" href="https://www.agency-nm.com/fr/NMcasestudies/Ubigi">
+<link rel="alternate" hreflang="it" href="https://www.agency-nm.com/it/NMcasestudies/Ubigi">
+<link rel="alternate" hreflang="de" href="https://www.agency-nm.com/de/NMcasestudies/Ubigi">
+<link rel="alternate" hreflang="x-default" href="https://www.agency-nm.com/NMcasestudies/Ubigi">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#2F55DC">
 <meta property="og:type" content="article">
@@ -18,6 +23,9 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="NM Agency — Growth Marketing Agency, Paris">
 <meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ubigi case study: Ten creators a month across Europe and Latin America | NM Agency">
 <meta name="twitter:description" content="A global leader in eSIM connectivity strengthening its presence in new markets.">
@@ -170,6 +178,41 @@ p{margin:0}
 .burger span{display:block;width:16px;height:1.5px;background:currentColor;position:relative}
 .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:16px;height:1.5px;background:currentColor}
 .burger span::before{top:-5px}.burger span::after{top:5px}
+/* ---- language switcher ---- */
+.lang{position:relative;flex:0 0 auto}
+.lang > summary{
+  display:flex;align-items:center;gap:6px;cursor:pointer;list-style:none;
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-2);background:var(--surface);border:1px solid var(--line);
+  padding:11px 13px;border-radius:999px;line-height:1;
+  transition:color .15s ease,border-color .15s ease;
+}
+.lang > summary::-webkit-details-marker{display:none}
+.lang > summary:hover{color:var(--ink);border-color:var(--line-strong)}
+.lang > summary .car{font-size:9px;opacity:.65;transition:transform .15s ease}
+.lang[open] > summary .car{transform:rotate(180deg)}
+.lang-menu{
+  position:absolute;right:0;top:calc(100% + 8px);z-index:70;min-width:168px;
+  display:grid;gap:2px;padding:8px;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);
+  box-shadow:0 18px 40px -22px rgba(13,16,20,.45);
+}
+.lang-menu a{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:9px 11px;border-radius:8px;text-decoration:none;
+  font-size:14px;font-weight:500;color:var(--ink-2);
+}
+.lang-menu a:hover{background:var(--surface-2);color:var(--ink)}
+.lang-menu a[aria-current]{color:var(--ink);background:var(--surface-2);font-weight:600}
+.lang-menu a .code{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;color:var(--muted)}
+@media (max-width:960px){
+  /* the header row has to hold logo + language + CTA + burger inside 390px,
+     and the CTA label is longest in French and German */
+  .logo .sub{display:none}
+  .lang > summary{padding:10px 11px;gap:0}
+  .lang > summary .car{display:none}
+}
+
 @media (max-width:960px){
   .nav{
     display:none;position:absolute;left:var(--gutter);right:var(--gutter);top:66px;
@@ -771,6 +814,15 @@ p{margin:0}
       <a href="/about">About</a>
     </nav>
     <div class="head-cta">
+      <details class="lang" id="lang">
+        <summary aria-label="Choose a language — current: English" title="Choose a language — current: English"><span>EN</span><span class="car" aria-hidden="true">▾</span></summary>
+        <div class="lang-menu">
+          <a href="/NMcasestudies/Ubigi" hreflang="en" lang="en" aria-current="true"><span>English</span><span class="code">EN</span></a>
+          <a href="/fr/NMcasestudies/Ubigi" hreflang="fr" lang="fr"><span>Français</span><span class="code">FR</span></a>
+          <a href="/it/NMcasestudies/Ubigi" hreflang="it" lang="it"><span>Italiano</span><span class="code">IT</span></a>
+          <a href="/de/NMcasestudies/Ubigi" hreflang="de" lang="de"><span>Deutsch</span><span class="code">DE</span></a>
+        </div>
+      </details>
       <a class="btn btn-primary" href="/contact">Book a call</a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span></button>
     </div>
